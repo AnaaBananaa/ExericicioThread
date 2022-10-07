@@ -1,17 +1,13 @@
 public class UtilsMatriz {
     
-    public static int[][] multiplicar(int[][] matrizA, int[][] matrizB) {
-        int linhaC = matrizA.length;
-        int colunaC = matrizB[0].length;
-        int[][] c = new int[linhaC][colunaC];
-        for (int linhaA = 0; linhaA < matrizA.length; linhaA++) {
+    public static void multiplicar(int[][] matrizA, int[][] matrizB, int[][] matrizC, int inicioA, int fimA) {
+        for (int linhaA = inicioA; linhaA < fimA; linhaA++) {
             for (int colunaB = 0; colunaB < matrizB[0].length; colunaB++) {
                 for (int aux = 0; aux < matrizA[0].length; aux++) {
-                    c[linhaA][colunaB] += matrizA[linhaA][aux] * matrizB[aux][colunaB];
+                    matrizC[linhaA][colunaB] += matrizA[linhaA][aux] * matrizB[aux][colunaB];
                 }
             }
         }
-        return c;
     }
     
     public static void imprimir(int[][] matriz) {
